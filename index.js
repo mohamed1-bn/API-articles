@@ -3,11 +3,11 @@ const app = express();
 const port = 8000; 
 app.use(express.json());
 let articles = [
-    { id: 1, title: "Mon premier article", content: "Ceci est le contenu.", author: "Alice" },
-    { id: 2, title: "Deuxième article", content: "Encore un autre contenu.", author: "Bob" }
+    { id: 1, title: "Bonjour", content: "Contenu 1", author: "Omar" },
+    { id: 2, title: "Hello", content: "Contenu 2", author: "OBY" }
 ];
 app.get('/', (req, res) => {
-    res.send('Bienvenue sur l\'API des articles !');
+    res.send('Connexion réussi');
 });
 app.get('/articles', (req, res) => {
     res.json(articles);
@@ -49,7 +49,7 @@ app.delete('/articles/:id', (req, res) => {
     }
 
     articles.splice(index, 1);
-    res.send('Article supprimé avec succès');
+    res.send('Article supprimé');
 });
 app.listen(port, () => {
     console.log(`Serveur démarré sur http://localhost:${port}`);
