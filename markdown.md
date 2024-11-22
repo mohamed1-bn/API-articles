@@ -1,5 +1,7 @@
-### 1.Récupère la liste de tous les commentaires.
-#### Résultat 
+1. Requête GET sur les comments
+- **Méthode** : GET
+- **Description** : Récupère la liste de tous les commentaires.
+Résultat 
 ```json
 [
   {
@@ -17,27 +19,45 @@
     "body": "est natus enim nihil est dolore omnis voluptatem numquam et omnis occaecati quod ullam at\n"
   },
 ]
+2. Requête POST sur les todos
+Méthode : POST
+Paramètres (x-www-form-urlencoded) :
 
-### 2. Requête POST sur les todos
-### Résultat
+  userId : 1
+  title : "Acheter du lait"
+  completed : false
+  Description : Crée une nouvelle tâche (todo).
+
+Résultat 
+json
 {
   "userId": 1,
   "title": "Acheter du lait",
   "completed": false,
   "id": 201
 }
-
-### 3.Requête PATCH sur les posts
-### Résultat.
+3. Requête PATCH sur les posts
+Méthode : PATCH
+Paramètres (raw, JSON) :
+json
+{
+  "title": "Nouveau titre",
+  "body": "Nouveau contenu"
+}
+Description : Modifie un post existant (title et body).
+Résultat
+json
 {
   "userId": 1,
   "id": 1,
   "title": "Nouveau titre",
   "body": "Nouveau contenu"
 }
-
-### 4. Récupère les commentaires associés au post ID 1.
-### Résultat.
+4. Requête GET pour les commentaires associés au post ayant l'ID 1
+Méthode : GET
+Description : Récupère les commentaires associés au post ID 1.
+Résultat 
+json
 [
   {
     "postId": 1,
@@ -54,9 +74,11 @@
     "body": "est natus enim nihil est dolore omnis voluptatem numquam et omnis occaecati quod ullam at\n"
   },
 ]
-
-### 5. Récupère les photos de l'album ID 2.
-### Résultat.
+5. Requête GET pour les photos liées à l'album numéro 2
+Méthode : GET
+Description : Récupère les photos de l'album ID 2.
+Résultat
+json
 [
   {
     "albumId": 2,
